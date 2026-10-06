@@ -276,7 +276,4 @@
   <data name="AppInfoView_OK" xml:space="preserve">
     <value>確認</value>
   </data>
-  <data name="ProtocolVersion" xml:space="preserve">
-    <value> </value>
-  </data>
 </root>

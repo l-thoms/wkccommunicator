@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+        The Shell navigation bar is rendered by MAUI as a Material AppBarLayout whose default
+        style (MauiAppBarLayout) uses "?attr/colorPrimary" as its background. App resources win
+        over library resources when they share a name, so this definition is what the app uses.
+    -->
+    <style name="MauiAppBarLayout" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="android:background">?attr/colorSurface</item>
+    </style>
+
+    <!--
+        Dialog overlays. They keep the Material 3 dialog look but pin the status bar appearance:
+        the status bar of this app always carries light icons, so every window that can become the
+        top window (dialogs, popups) has to say so - otherwise Android falls back to the light
+        theme default and paints black icons on the dark status bar while a popup is open.
+    -->
+    <style name="AppMaterialAlertDialogTheme" parent="ThemeOverlay.Material3.MaterialAlertDialog">
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+    </style>
+
+    <style name="AppAlertDialogTheme" parent="ThemeOverlay.Material3.Dialog.Alert">
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+    </style>
+
+    <!--
+        Theme applied by MainActivity.
+
+        MAUI ships two app themes: "Maui.MainTheme" is based on "Theme.MaterialComponents.DayNight"
+        (Material 2) and only borrows a few Material 3 widgets, while "Maui.Material3.Theme" is
+        based on "Theme.Material3.DayNight". The app uses the Material 3 theme so that the Shell
+        tab bar is the real Material 3 BottomNavigationView (with its own active indicator and
+        Material 3 height) instead of a Material 2 widget, and so every Material 3 color role the
+        widgets ask for exists in the theme.
+
+        The accent roles below replace the Material Components baseline (purple) palette with the
+        palette generated from the app icon orange #F3AC70.
+    -->
+    <style name="AppTheme.NoActionBar" parent="Maui.Material3.Theme.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryContainer">@color/colorPrimaryContainer</item>
+        <item name="colorOnPrimary">@color/colorOnPrimary</item>
+        <item name="colorOnPrimaryContainer">@color/colorOnPrimaryContainer</item>
+        <item name="colorSecondaryContainer">@color/colorSecondaryContainer</item>
+        <item name="colorOnSecondaryContainer">@color/colorOnSecondaryContainer</item>
+        <item name="colorSecondary">@color/colorSecondary</item>
+        <item name="colorOnSecondary">@color/colorOnSecondary</item>
+        <!-- Tint of the activated controls (check box / radio button of the Picker and single
+             choice dialogs, switches, text selection handles). Both the AppCompat attribute and
+             the platform one are set: a platform styled single choice indicator (what the Picker
+             dialog uses) reads the platform accent. -->
+        <item name="colorControlActivated">@color/colorPrimary</item>
+        <item name="android:colorAccent">@color/colorPrimary</item>
+        <item name="android:colorControlActivated">@color/colorPrimary</item>
+        <item name="colorSurface">@color/colorSurface</item>
+        <item name="colorSurfaceContainer">@color/colorSurfaceContainer</item>
+        <item name="colorSurfaceContainerHigh">@color/colorSurfaceContainerHigh</item>
+        <item name="colorSurfaceVariant">@color/colorSurfaceVariant</item>
+        <item name="colorOutlineVariant">@color/colorOutlineVariant</item>
+
+        <!-- Put the dialogs back on the Material 3 overlays: MAUI's Material 3 theme mixin
+             replaces "alertDialogTheme" with its Material 2 based MauiAlertDialogTheme, which
+             made the device action sheet keep the purple Material Components accent. -->
+        <item name="alertDialogTheme">@style/AppAlertDialogTheme</item>
+        <item name="materialAlertDialogTheme">@style/AppMaterialAlertDialogTheme</item>
+
+        <!-- The status bar is always drawn with light icons (see MainWindow.Android.cs). The
+             Material 3 light theme defaults this to true (dark icons) and Android re-applies that
+             default whenever the window decorations are re-resolved, for example when a popup is
+             shown. Pinning it here keeps the icons light. -->
+        <item name="android:windowLightStatusBar">false</item>
+
+        <!-- The window background is re-applied by Android whenever the window decorations are
+             re-resolved (for example when a popup is shown). Keeping the status bar transparent
+             and painting it from the decor view instead (see MainWindow.Android.cs) is what makes
+             the color survive those re-resolutions. -->
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+    </style>
+</resources>

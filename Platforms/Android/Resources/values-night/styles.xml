@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Dark theme counterpart of values/styles.xml: same status bar policy (light icons on the
+         status bar), so it has to be pinned in the night resource set as well. -->
+    <style name="AppMaterialAlertDialogTheme" parent="ThemeOverlay.Material3.MaterialAlertDialog">
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+    </style>
+
+    <style name="AppAlertDialogTheme" parent="ThemeOverlay.Material3.Dialog.Alert">
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar" parent="Maui.Material3.Theme.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryContainer">@color/colorPrimaryContainer</item>
+        <item name="colorOnPrimary">@color/colorOnPrimary</item>
+        <item name="colorOnPrimaryContainer">@color/colorOnPrimaryContainer</item>
+        <item name="colorSecondaryContainer">@color/colorSecondaryContainer</item>
+        <item name="colorOnSecondaryContainer">@color/colorOnSecondaryContainer</item>
+        <item name="colorSecondary">@color/colorSecondary</item>
+        <item name="colorOnSecondary">@color/colorOnSecondary</item>
+        <!-- Tint of the activated controls (check box / radio button of the Picker and single
+             choice dialogs, switches, text selection handles). Both the AppCompat attribute and
+             the platform one are set: a platform styled single choice indicator (what the Picker
+             dialog uses) reads the platform accent. -->
+        <item name="colorControlActivated">@color/colorPrimary</item>
+        <item name="android:colorAccent">@color/colorPrimary</item>
+        <item name="android:colorControlActivated">@color/colorPrimary</item>
+        <item name="colorSurface">@color/colorSurface</item>
+        <item name="colorSurfaceContainer">@color/colorSurfaceContainer</item>
+        <item name="colorSurfaceContainerHigh">@color/colorSurfaceContainerHigh</item>
+        <item name="colorSurfaceVariant">@color/colorSurfaceVariant</item>
+        <item name="colorOutlineVariant">@color/colorOutlineVariant</item>
+
+        <item name="alertDialogTheme">@style/AppAlertDialogTheme</item>
+        <item name="materialAlertDialogTheme">@style/AppMaterialAlertDialogTheme</item>
+
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+    </style>
+</resources>

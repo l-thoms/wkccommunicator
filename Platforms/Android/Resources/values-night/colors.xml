@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Material 3 accent roles for the dark theme (same seed: app icon orange #F3AC70). -->
+    <color name="colorPrimary">#FFB77B</color>
+    <!-- In the dark theme the status bar blends with the app bar and the page, and dialog windows
+         (which Android paints with this role) have to land on the same tone. -->
+    <color name="colorPrimaryDark">#17120F</color>
+    <color name="colorAccent">#F3AC70</color>
+    <color name="colorActionMenuTextColor">#FFFFFF</color>
+
+    <color name="colorPrimaryContainer">#6C3A06</color>
+    <color name="colorOnPrimary">#4D2700</color>
+    <color name="colorOnPrimaryContainer">#FFDCC2</color>
+
+    <color name="colorSecondaryContainer">#5A422E</color>
+    <color name="colorOnSecondaryContainer">#FFDCC2</color>
+
+    <!-- Material 2 widgets (the check box / radio button of the Picker and single choice dialogs
+         among them) tint themselves with the secondary role, which otherwise stays on the purple
+         baseline palette. -->
+    <color name="colorSecondary">#E3C0A6</color>
+    <color name="colorOnSecondary">#412C19</color>
+
+    <!-- Page and app bar background. -->
+    <color name="colorSurface">#17120F</color>
+    <!-- One surface-container step lighter: the tab bar background. -->
+    <color name="colorSurfaceContainer">#241F1B</color>
+    <color name="colorSurfaceContainerHigh">#2F2925</color>
+    <color name="colorSurfaceVariant">#51443B</color>
+    <color name="colorOutlineVariant">#4C4541</color>
+
+    <color name="colorOnSurface">#ECE0DA</color>
+    <color name="colorOnSurfaceVariant">#CFC4BE</color>
+
+    <!-- Same reason as in the light theme: the platform dialogs resolve these roles. -->
+    <color name="m3_sys_color_dark_primary">#FFB77B</color>
+    <color name="m3_sys_color_dark_on_primary">#4D2700</color>
+    <color name="m3_sys_color_dark_on_surface">#ECE0DA</color>
+    <color name="m3_sys_color_dark_on_surface_variant">#CFC4BE</color>
+    <color name="m3_sys_color_dark_surface_container_high">#2F2925</color>
+    <color name="m3_sys_color_dark_surface_container_highest">#3A342F</color>
+    <!-- The check box / radio button of the Picker and single choice dialogs is tinted with the
+         secondary system role (Material 2 behaviour of those widgets). Pointing that role at the
+         app accent keeps selection controls in the same orange as the rest of the app. -->
+    <color name="m3_sys_color_dark_secondary">#FFB77B</color>
+    <color name="m3_sys_color_dark_on_secondary">#4D2700</color>
+</resources>

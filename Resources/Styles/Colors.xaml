@@ -4,73 +4,82 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
-	<!-- Note: For Android please see also Platforms\Android\Resources\values\colors.xml -->
+	<!--
+		Material 3 semantic palette.
+		Seed color: #F3AC70 (the app icon background orange), style: TonalSpot.
+		Generated with MaterialColorUtilities (LightSchemeMapper / DarkSchemeMapper).
+		The surface roles stay close to neutral - only lightly tinted - which is what keeps the
+		depth relationships of the original design intact; the accent roles carry the orange.
+	-->
 
-	<!-- Material 3 semantic palette -->
-	<Color x:Key="Primary">#6750A4</Color>
+	<!-- Note: For Android please see also Platforms\Android\Resources\values\colors.xml
+	     and Platforms\Android\Resources\values-night\colors.xml (the status bar, the app bar
+	     background and the Material widget colors). -->
+
+	<Color x:Key="Primary">#88511D</Color>
 	<Color x:Key="OnPrimary">#FFFFFF</Color>
-	<Color x:Key="PrimaryContainer">#EADDFF</Color>
-	<Color x:Key="OnPrimaryContainer">#21005D</Color>
+	<Color x:Key="PrimaryContainer">#FFDCC2</Color>
+	<Color x:Key="OnPrimaryContainer">#2E1500</Color>
 
-	<Color x:Key="PrimaryDark">#D0BCFF</Color>
-	<Color x:Key="OnPrimaryDark">#381E72</Color>
-	<Color x:Key="PrimaryContainerDark">#4F378B</Color>
-	<Color x:Key="OnPrimaryContainerDark">#EADDFF</Color>
+	<Color x:Key="PrimaryDark">#FFB77B</Color>
+	<Color x:Key="OnPrimaryDark">#4D2700</Color>
+	<Color x:Key="PrimaryContainerDark">#6C3A06</Color>
+	<Color x:Key="OnPrimaryContainerDark">#FFDCC2</Color>
 
-	<Color x:Key="Secondary">#625B71</Color>
+	<Color x:Key="Secondary">#745944</Color>
 	<Color x:Key="OnSecondary">#FFFFFF</Color>
-	<Color x:Key="SecondaryContainer">#E8DEF8</Color>
-	<Color x:Key="OnSecondaryContainer">#1D192B</Color>
+	<Color x:Key="SecondaryContainer">#FFDCC2</Color>
+	<Color x:Key="OnSecondaryContainer">#2A1707</Color>
 
-	<Color x:Key="SecondaryDark">#CCC2DC</Color>
-	<Color x:Key="OnSecondaryDark">#332D41</Color>
-	<Color x:Key="SecondaryContainerDark">#4A4458</Color>
-	<Color x:Key="OnSecondaryContainerDark">#E8DEF8</Color>
+	<Color x:Key="SecondaryDark">#E3C0A6</Color>
+	<Color x:Key="OnSecondaryDark">#412C19</Color>
+	<Color x:Key="SecondaryContainerDark">#5A422E</Color>
+	<Color x:Key="OnSecondaryContainerDark">#FFDCC2</Color>
 
-	<Color x:Key="Tertiary">#7D5260</Color>
+	<Color x:Key="Tertiary">#5C6237</Color>
 	<Color x:Key="OnTertiary">#FFFFFF</Color>
-	<Color x:Key="TertiaryContainer">#FFD8E4</Color>
-	<Color x:Key="OnTertiaryContainer">#31111D</Color>
+	<Color x:Key="TertiaryContainer">#E0E7B1</Color>
+	<Color x:Key="OnTertiaryContainer">#191E00</Color>
 
-	<Color x:Key="TertiaryDark">#EFB8C8</Color>
-	<Color x:Key="OnTertiaryDark">#492532</Color>
-	<Color x:Key="TertiaryContainerDark">#633B48</Color>
-	<Color x:Key="OnTertiaryContainerDark">#FFD8E4</Color>
+	<Color x:Key="TertiaryDark">#C4CB97</Color>
+	<Color x:Key="OnTertiaryDark">#2E330D</Color>
+	<Color x:Key="TertiaryContainerDark">#444A22</Color>
+	<Color x:Key="OnTertiaryContainerDark">#E0E7B1</Color>
 
-	<Color x:Key="SurfaceLight">#FEF7FF</Color>
-	<Color x:Key="SurfaceContainerLight">#F3EDF7</Color>
-	<Color x:Key="SurfaceVariantLight">#E7E0EC</Color>
-	<Color x:Key="OnSurfaceLight">#1D1B20</Color>
-	<Color x:Key="OnSurfaceVariantLight">#49454F</Color>
-	<Color x:Key="OutlineLight">#79747E</Color>
-	<Color x:Key="OutlineVariantLight">#CAC4D0</Color>
+	<Color x:Key="SurfaceLight">#FFF8F5</Color>
+	<Color x:Key="SurfaceContainerLight">#F7ECE5</Color>
+	<Color x:Key="SurfaceVariantLight">#EEE0D7</Color>
+	<Color x:Key="OnSurfaceLight">#201B17</Color>
+	<Color x:Key="OnSurfaceVariantLight">#4C4541</Color>
+	<Color x:Key="OutlineLight">#7E7570</Color>
+	<Color x:Key="OutlineVariantLight">#CFC4BE</Color>
 
-	<Color x:Key="SurfaceDark">#141218</Color>
-	<Color x:Key="SurfaceContainerDark">#211F26</Color>
-	<Color x:Key="SurfaceVariantDark">#49454F</Color>
-	<Color x:Key="OnSurfaceDark">#E6E0E9</Color>
-	<Color x:Key="OnSurfaceVariantDark">#CAC4D0</Color>
-	<Color x:Key="OutlineDark">#938F99</Color>
-	<Color x:Key="OutlineVariantDark">#49454F</Color>
+	<Color x:Key="SurfaceDark">#17120F</Color>
+	<Color x:Key="SurfaceContainerDark">#241F1B</Color>
+	<Color x:Key="SurfaceVariantDark">#51443B</Color>
+	<Color x:Key="OnSurfaceDark">#ECE0DA</Color>
+	<Color x:Key="OnSurfaceVariantDark">#CFC4BE</Color>
+	<Color x:Key="OutlineDark">#988F89</Color>
+	<Color x:Key="OutlineVariantDark">#4C4541</Color>
 
-	<!-- Backwards-compatible aliases -->
-	<Color x:Key="PrimaryDarkText">#381E72</Color>
-	<Color x:Key="SecondaryDarkText">#E6E1E5</Color>
+	<!-- Backwards-compatible aliases: the "dark text" roles are the on-color roles. -->
+	<Color x:Key="PrimaryDarkText">#4D2700</Color>
+	<Color x:Key="SecondaryDarkText">#412C19</Color>
 
 	<Color x:Key="White">White</Color>
 	<Color x:Key="Black">Black</Color>
-	<Color x:Key="Magenta">#6750A4</Color>
-	<Color x:Key="MidnightBlue">#1D1B20</Color>
-	<Color x:Key="OffBlack">#141218</Color>
+	<Color x:Key="Magenta">#F3AC70</Color>
+	<Color x:Key="MidnightBlue">#201B17</Color>
+	<Color x:Key="OffBlack">#17120F</Color>
 
-	<Color x:Key="Gray100">#F3EDF7</Color>
-	<Color x:Key="Gray200">#E7E0EC</Color>
-	<Color x:Key="Gray300">#CAC4D0</Color>
-	<Color x:Key="Gray400">#938F99</Color>
-	<Color x:Key="Gray500">#79747E</Color>
-	<Color x:Key="Gray600">#625B71</Color>
-	<Color x:Key="Gray900">#1D1B20</Color>
-	<Color x:Key="Gray950">#141218</Color>
+	<Color x:Key="Gray100">#F6ECE7</Color>
+	<Color x:Key="Gray200">#EEE0D7</Color>
+	<Color x:Key="Gray300">#CDC3BD</Color>
+	<Color x:Key="Gray400">#988F89</Color>
+	<Color x:Key="Gray500">#7E7570</Color>
+	<Color x:Key="Gray600">#4C4541</Color>
+	<Color x:Key="Gray900">#201B17</Color>
+	<Color x:Key="Gray950">#17120F</Color>
 
 	<SolidColorBrush x:Key="PrimaryBrush" Color="{StaticResource Primary}"/>
 	<SolidColorBrush x:Key="SecondaryBrush" Color="{StaticResource Secondary}"/>

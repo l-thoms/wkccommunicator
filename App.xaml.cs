@@ -1,4 +1,4 @@
-﻿using CommunityToolkit.Maui;
+using CommunityToolkit.Maui;
 using CommunityToolkit.Maui.Extensions;
 using CommunityToolkit.Maui.Views;
 
@@ -6,6 +6,8 @@ namespace WkcCommunicator
 {
 	public partial class App : Application
 	{
+		public static string ProtocolVersion { get; } = "0.2.0.0";
+
 		public App()
 		{
 			InitializeComponent();
@@ -13,7 +15,7 @@ namespace WkcCommunicator
 
 		protected override Window CreateWindow(IActivationState? activationState)
 		{
-			return new Window(new AppShell());
+			return new MainWindow(new AppShell());
 		}
 
 		public static async Task ShowCommonPopupAsync(Page parent, View content)

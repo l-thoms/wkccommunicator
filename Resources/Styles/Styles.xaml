@@ -406,6 +406,12 @@
 	</Style>
 
 	<Style TargetType="Shell" ApplyToDerivedTypes="True">
+		<!-- Material 3 shell surfaces: the app bar and the page share the bright surface tone,
+		     the tab bar sits one surface-container step darker, and the primary color is reserved
+		     for the Android status bar and for interactive elements. -->
+		<Setter Property="Shell.BackgroundColor" Value="{AppThemeBinding Light={StaticResource SurfaceLight}, Dark={StaticResource SurfaceDark}}" />
+		<Setter Property="Shell.ForegroundColor" Value="{AppThemeBinding Light={StaticResource OnSurfaceLight}, Dark={StaticResource OnSurfaceDark}}" />
+		<Setter Property="Shell.TitleColor" Value="{AppThemeBinding Light={StaticResource OnSurfaceLight}, Dark={StaticResource OnSurfaceDark}}" />
 		<Setter Property="Shell.TabBarBackgroundColor" Value="{AppThemeBinding Light={StaticResource SurfaceContainerLight}, Dark={StaticResource SurfaceContainerDark}}" />
 		<Setter Property="Shell.TabBarForegroundColor" Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource PrimaryDark}}" />
 		<Setter Property="Shell.TabBarTitleColor" Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource PrimaryDark}}" />

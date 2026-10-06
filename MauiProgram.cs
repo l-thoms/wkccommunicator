@@ -1,12 +1,8 @@
-﻿using CommunityToolkit.Maui;
-using Google.Android.Material.TextField;
+using CommunityToolkit.Maui;
 using Microsoft.Extensions.Logging;
 using Microsoft.Maui.Handlers;
 #if ANDROID
-using Android.Content.Res;
-using Android.Views;
-using Google.Android.Material.TextField;
-using Microsoft.Maui.Platform;
+using Microsoft.Maui.LifecycleEvents;
 #endif
 
 namespace WkcCommunicator
@@ -22,6 +18,17 @@ namespace WkcCommunicator
 
 #if DEBUG
 			builder.Logging.AddDebug();
+#endif
+
+#if ANDROID
+			// Showing a popup or a dialog makes Android re-resolve the window decorations, which
+			// resets the explicitly set status bar color. Re-apply it whenever we come back.
+			builder.ConfigureLifecycleEvents(lifecycle =>
+			{
+				lifecycle.AddAndroid(android => android
+					.OnResume(activity => (activity as MainActivity)?.RefreshStatusBar())
+					.OnPostResume(activity => (activity as MainActivity)?.RefreshStatusBar()));
+			});
 #endif
 
             return builder.Build();

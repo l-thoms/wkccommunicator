@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WkcCommunicator.Controls.AppInfoView"
 			 xmlns:res="clr-namespace:WkcCommunicator.Resources"
+			 xmlns:app="clr-namespace:WkcCommunicator"
 			 xmlns:applicationModel="clr-namespace:Microsoft.Maui.ApplicationModel;assembly=Microsoft.Maui.Essentials">
 	<Grid Padding="24,18,24,18" Background="{AppThemeBinding Light={StaticResource SurfaceLight}, Dark={StaticResource SurfaceDark}}">
 		<VerticalStackLayout Spacing="12">
@@ -11,7 +12,7 @@
 				<Label Style="{StaticResource LabelLighter}" Text="{x:Static res:AppResources.AppInfoView_Version}" Grid.Row="0" Grid.Column="0"/>
 				<Label Style="{StaticResource LabelLighter}" Text="{x:Static applicationModel:AppInfo.VersionString}" Grid.Row="0" Grid.Column="1"/>
 				<Label Style="{StaticResource LabelLighter}" Text="{x:Static res:AppResources.AppInfoView_ProtocolVersion}" Grid.Row="1" Grid.Column="0"/>
-				<Label Style="{StaticResource LabelLighter}" Text="{x:Static res:AppResources.ProtocolVersion}" Grid.Row="1" Grid.Column="1"/>
+				<Label Style="{StaticResource LabelLighter}" Text="{x:Static app:App.ProtocolVersion}" Grid.Row="1" Grid.Column="1"/>
 				<Label Style="{StaticResource LabelLighter}" Text="{x:Static res:AppResources.AppInfoView_License}" Grid.Row="2" Grid.Column="0"/>
 				<Label Style="{StaticResource LabelLighter}" Text="GNU GPL-3.0 License" Grid.Row="2" Grid.Column="1"/>
 			</Grid>

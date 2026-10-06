@@ -511,15 +511,6 @@ namespace WkcCommunicator.Resources {
         }
         
         /// <summary>
-        ///   查找类似 0.2.0.0 的本地化字符串。
-        /// </summary>
-        internal static string ProtocolVersion {
-            get {
-                return ResourceManager.GetString("ProtocolVersion", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   查找类似 &lt;Unnamed Group&gt; 的本地化字符串。
         /// </summary>
         internal static string Table_UnnamedGroup {
