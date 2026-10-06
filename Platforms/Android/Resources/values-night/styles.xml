@@ -2,6 +2,14 @@
 <resources>
     <!-- Dark theme counterpart of values/styles.xml: same status bar policy (light icons on the
          status bar), so it has to be pinned in the night resource set as well. -->
+    <style name="Maui.SplashTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="maui_splash">true</item>
+        <item name="android:windowBackground">@drawable/maui_splash</item>
+        <item name="android:forceDarkAllowed">false</item>
+        <item name="android:windowSplashScreenBackground">@color/maui_splash_color</item>
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/maui_splash</item>
+    </style>
+
     <style name="AppMaterialAlertDialogTheme" parent="ThemeOverlay.Material3.MaterialAlertDialog">
         <item name="android:windowLightStatusBar">false</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
@@ -40,5 +48,10 @@
         <item name="android:windowLightStatusBar">false</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+
+        <!-- Same splash as the light theme: the launch window keeps the orange of the app icon
+             instead of the dark theme window background. -->
+        <item name="android:windowBackground">@drawable/maui_splash</item>
+        <item name="android:windowSplashScreenBackground">@color/maui_splash_color</item>
     </style>
 </resources>

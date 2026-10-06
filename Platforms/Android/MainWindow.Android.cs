@@ -38,13 +38,13 @@ public partial class MainWindow
 
 		var color = night
 			? ResolveThemeColor(activity, Resource.Color.colorSurface, "#17120F")
-			: ResolveThemeColor(activity, Resource.Color.colorPrimaryDark, "#6C3A06");
+			: ResolveThemeColor(activity, Resource.Color.colorSurface, "#FFF8F5");
 
 		window.SetStatusBarColor(color);
 		window.DecorView?.SetBackgroundColor(color);
 
 		// Light icons and clock on the status bar in both themes.
-		WindowCompat.GetInsetsController(window, window.DecorView).AppearanceLightStatusBars = false;
+		// WindowCompat.GetInsetsController(window, window.DecorView).AppearanceLightStatusBars = false;
 #endif
 	}
 

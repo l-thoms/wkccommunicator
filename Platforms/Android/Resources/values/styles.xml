@@ -10,6 +10,20 @@
     </style>
 
     <!--
+        Splash theme (Android 12+ attributes are in values-v31/styles.xml).
+
+        The activity launches with this theme. MIUI repaints the launch screen with a dark
+        background when the device is in dark mode and the theme resolves to a night qualified one,
+        so this theme is based on a light Material theme in every configuration: that keeps the
+        launch background the app icon orange in both themes.
+    -->
+    <style name="Maui.SplashTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="maui_splash">true</item>
+        <item name="android:windowBackground">@drawable/maui_splash</item>
+        <item name="android:forceDarkAllowed">false</item>
+    </style>
+
+    <!--
         Dialog overlays. They keep the Material 3 dialog look but pin the status bar appearance:
         the status bar of this app always carries light icons, so every window that can become the
         top window (dialogs, popups) has to say so - otherwise Android falls back to the light
@@ -78,5 +92,12 @@
              the color survive those re-resolutions. -->
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+
+        <!-- MainActivity switches to this theme while it starts, so the launch window (the splash
+             background plus the app icon) has to be declared here as well: otherwise the dark theme
+             would fall back to its own dark window background and the splash would turn black while
+             the icon keeps its orange background. -->
+        <item name="android:windowBackground">@drawable/maui_splash</item>
+        <item name="android:windowSplashScreenBackground">@color/maui_splash_color</item>
     </style>
 </resources>

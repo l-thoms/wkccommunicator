@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+        Splash theme, dark theme resource set.
+
+        Android 12+ builds the launch screen from "windowSplashScreenBackground". The theme is
+        declared in every configuration (this file, values/styles.xml, values-v31/styles.xml) so the
+        launch background is the app icon orange rather than a dark tone.
+
+        Note: on MIUI (Xiaomi) the dark theme additionally re-tints that launch background to a much
+        darker tone of its own, so the launch screen still comes out dark there even though the same
+        value renders as orange in the light theme. That behaviour is outside the app's resources.
+    -->
+    <style name="Maui.SplashTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="maui_splash">true</item>
+        <item name="android:windowBackground">@drawable/maui_splash</item>
+        <item name="android:forceDarkAllowed">false</item>
+        <item name="android:windowSplashScreenBackground">#FFF3AC70</item>
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/maui_splash</item>
+    </style>
+</resources>

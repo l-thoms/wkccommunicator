@@ -45,9 +45,9 @@ namespace WkcCommunicator
         /// </summary>
         internal AColor StatusBarBaseColor()
         {
-            var night = (Resources?.Configuration?.UiMode & Android.Content.Res.UiMode.NightMask)
-                == Android.Content.Res.UiMode.NightYes;
-            var colorResource = night ? Resource.Color.colorSurface : Resource.Color.colorPrimaryDark;
+            // var night = (Resources?.Configuration?.UiMode & Android.Content.Res.UiMode.NightMask)
+            //     == Android.Content.Res.UiMode.NightYes;
+            var colorResource = Resource.Color.colorSurface;
             return new AColor(AndroidX.Core.Content.ContextCompat.GetColor(this, colorResource));
         }
 
@@ -68,7 +68,10 @@ namespace WkcCommunicator
                 if (fragment is not DialogFragment dialogFragment || dialogFragment.Dialog?.Window is not { } window)
                     return;
 
-                // Keep the light status bar icons of the app instead of the dialog theme's dark ones.
+                // The app's own status bar follows the theme (dark icons on the light surface),
+                // but every dialog darkens the status bar behind it, so they all switch to the
+                // light icon set. Without this a floating popup keeps the dark icons of the
+                // activity theme and they disappear into the darkened bar.
                 WindowCompat.GetInsetsController(window, window.DecorView).AppearanceLightStatusBars = false;
 
                 // A full screen dialog already dims the status bar through its own dim layer, but a
@@ -77,7 +80,7 @@ namespace WkcCommunicator
                 var baseColor = _activity.StatusBarBaseColor();
                 var factor = 1f - (window.Attributes?.DimAmount ?? 0f);
                 if (factor > 0.95f || factor <= 0f)
-                    factor = 0.68f;
+                    factor = 0.7f;
 
                 window.SetStatusBarColor(AColor.Argb(
                     255,
