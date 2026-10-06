@@ -33,23 +33,11 @@ jobs:
       - name: Build
         run: |
           dotnet publish -c Release -f net10.0-android
-          rm ./bin/Release/net10.0-android/publish/${{ vars.APP_NAME }}-Signed.apk
-
-      - name: Sign APK
-        uses: r0adkll/sign-android-release@v1
-        id: sign_app
-        with:
-          releaseDirectory: ./bin/Release/net10.0-android/publish
-          signingKeyBase64: ${{ secrets.KEYSTORE_B64 }}
-          alias: ${{ secrets.KEYSTORE_ALIAS }}
-          keyStorePassword: ${{ secrets.KEYSTORE_STOREPASS }}
-          keyPassword: ${{ secrets.KEYSTORE_KEYPASS }}
-        env:
-           BUILD_TOOLS_VERSION: "34.0.0"
 
       - name: Create Release
         uses: softprops/action-gh-release@v2
         with:
           draft: false
           prerelease: ${{ startsWith(github.ref_name, 'v0.') }}
-          files: ${{ steps.sign_app.outputs.signedReleaseFile }}
+          files: |
+            ./bin/Release/net10.0-android/publish/${{ vars.APP_NAME }}-Signed.apk
